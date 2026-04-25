@@ -626,7 +626,7 @@ function cleanIpcError(err: unknown): string {
   const stripped = raw.replace(/^Error invoking remote method '[^']*':\s*[A-Za-z]*Error:\s*/, '');
   const parts = stripped.split(' / ');
   if (parts.length >= 2) {
-    return getCurrentLocale() === 'zh-CN' ? (parts[1] ?? stripped) : (parts[0] ?? stripped);
+    return getCurrentLocale().startsWith('zh-') ? (parts[1] ?? stripped) : (parts[0] ?? stripped);
   }
   return stripped;
 }

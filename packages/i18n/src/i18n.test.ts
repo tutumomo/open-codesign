@@ -21,6 +21,22 @@ describe('normalizeLocale', () => {
     expect(normalizeLocale('zh_CN')).toBe('zh-CN');
   });
 
+  it('returns zh-TW for zh-TW input', () => {
+    expect(normalizeLocale('zh-TW')).toBe('zh-TW');
+  });
+  it('returns zh-TW for lowercase zh-tw', () => {
+    expect(normalizeLocale('zh-tw')).toBe('zh-TW');
+  });
+  it('returns zh-TW for underscore zh_TW', () => {
+    expect(normalizeLocale('zh_TW')).toBe('zh-TW');
+  });
+  it('returns zh-TW for zh-Hant script subtag', () => {
+    expect(normalizeLocale('zh-Hant')).toBe('zh-TW');
+  });
+  it('returns zh-TW for zh-Hant-TW (macOS/iOS full BCP 47)', () => {
+    expect(normalizeLocale('zh-Hant-TW')).toBe('zh-TW');
+  });
+
   it('maps en-US / en-GB to en', () => {
     expect(normalizeLocale('en-US')).toBe('en');
     expect(normalizeLocale('en-GB')).toBe('en');

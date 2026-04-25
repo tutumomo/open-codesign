@@ -2,14 +2,15 @@
  * i18n entry point for open-codesign.
  *
  * Design notes:
- * - Two locales out of the gate: `en` and `zh-CN`. Adding a third means adding
- *   a JSON file under `./locales/` and registering it in `resources` + `availableLocales`.
+ * - Supported locales: `en`, `zh-CN`, `zh-TW`, `pt-BR`. To add a new locale:
+ *   add a JSON file under `./locales/`, then register it in `resources`,
+ *   `availableLocales`, and `normalizeLocale`.
  * - We do NOT silently swallow missing keys. In dev they render as `⟦key⟧` so
  *   they're visible in the UI; in any environment a `console.warn` records the
  *   namespace + locale + key path. (Principle §10: no silent fallbacks.)
  * - `normalizeLocale` is intentionally narrow — we only widen aliases that we
- *   are confident about (zh-Hans*, en-*). Anything else logs a warning and
- *   falls back to `DEFAULT_LOCALE`.
+ *   are confident about (zh-Hans*, zh-Hant*, en-*). Anything else logs a
+ *   warning and falls back to `DEFAULT_LOCALE`.
  */
 
 import i18next from 'i18next';

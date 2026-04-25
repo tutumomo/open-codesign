@@ -1,3 +1,6 @@
+// Alternative to convert-zh-cn-to-zh-tw.ts: translates directly from en.json using Claude API.
+// Use when zh-CN is not available or when higher translation quality is needed.
+// Requires ANTHROPIC_API_KEY environment variable.
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';

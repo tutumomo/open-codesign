@@ -1,3 +1,6 @@
+// Converts zh-CN.json to zh-TW.json using OpenCC (no API key required).
+// Run with: pnpm convert:zh-tw
+// For AI-based translation from en.json instead, see translate-zh-tw.ts.
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -27,5 +30,11 @@ const source = JSON.parse(fs.readFileSync(SOURCE_FILE, 'utf-8')) as NestedTransl
 const converted = convertValues(source);
 fs.writeFileSync(TARGET_FILE, `${JSON.stringify(converted, null, 2)}\n`, 'utf-8');
 
-const keyCount = JSON.stringify(converted).match(/"[^"]+"\s*:/g)?.length ?? 0;
-console.log(`Done. Converted ${keyCount} keys to zh-TW.json`);
+function countLeaves(o: NestedTranslation): number {
+  return Object.values(o).reduce<number>(
+    (sum, v) => sum + (typeof v === 'string' ? 1 : countLeaves(v as NestedTranslation)),
+    0,
+  );
+}
+const leafCount = countLeaves(converted);
+console.log(`Done. Converted ${leafCount} string values to zh-TW.json`);

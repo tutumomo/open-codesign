@@ -1,0 +1,9 @@
+{
+  "name": "@open-codesign/scripts",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "@anthropic-ai/sdk": "^0.91.1"
+  }
+}

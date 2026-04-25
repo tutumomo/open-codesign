@@ -18,8 +18,9 @@ import { initReactI18next, useTranslation } from 'react-i18next';
 import en from './locales/en.json';
 import ptBR from './locales/pt-BR.json';
 import zhCN from './locales/zh-CN.json';
+import zhTW from './locales/zh-TW.json';
 
-export const availableLocales = ['en', 'zh-CN', 'pt-BR'] as const;
+export const availableLocales = ['en', 'zh-CN', 'zh-TW', 'pt-BR'] as const;
 export type Locale = (typeof availableLocales)[number];
 
 const DEFAULT_LOCALE: Locale = 'en';
@@ -27,6 +28,7 @@ const DEFAULT_LOCALE: Locale = 'en';
 const resources = {
   en: { translation: en },
   'zh-CN': { translation: zhCN },
+  'zh-TW': { translation: zhTW },
   'pt-BR': { translation: ptBR },
 } as const;
 
@@ -39,6 +41,9 @@ export function normalizeLocale(value: string | undefined | null): Locale {
   if (!value) return DEFAULT_LOCALE;
   if (isSupportedLocale(value)) return value;
   const lower = value.toLowerCase();
+  if (lower === 'zh-tw' || lower === 'zh_tw' || lower.startsWith('zh-hant')) {
+    return 'zh-TW';
+  }
   if (lower === 'zh' || lower.startsWith('zh-hans') || lower === 'zh-cn' || lower === 'zh_cn') {
     return 'zh-CN';
   }

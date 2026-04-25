@@ -30,6 +30,7 @@
     "docs:preview": "pnpm --filter open-codesign-website preview",
     "smoke": "tsx scripts/smoke-models.ts",
     "translate:zh-tw": "tsx scripts/translate-zh-tw.ts",
+    "convert:zh-tw": "tsx scripts/convert-zh-cn-to-zh-tw.ts",
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "turbo run build && changeset publish"
@@ -47,6 +48,7 @@
     "@types/node": "^22.10.2",
     "acorn": "^8.14.0",
     "husky": "^9.1.7",
+    "opencc-js": "^1.0.5",
     "tsx": "^4.19.2",
     "turbo": "^2.3.3",
     "typescript": "^5.7.2"

@@ -35,6 +35,9 @@ importers:
       husky:
         specifier: ^9.1.7
         version: 9.1.7
+      opencc-js:
+        specifier: ^1.0.5
+        version: 1.0.5
       tsx:
         specifier: ^4.19.2
         version: 4.21.0
@@ -3845,6 +3848,9 @@ packages:
         optional: true
       zod:
         optional: true
+
+  opencc-js@1.0.5:
+    resolution: {integrity: sha512-LD+1SoNnZdlRwtYTjnQdFrSVCAaYpuDqL5CkmOaHOkKoKh7mFxUicLTRVNLU5C+Jmi1vXQ3QL4jWdgSaa4sKjg==}
 
   ora@5.4.1:
     resolution: {integrity: sha512-5b6Y85tPxZZ7QytO+BQzysW31HJku27cRIlkbAXaNx+BdcVi+LlRFmVXzeF6a7JCwJpyw5c4b+YSVImQIrBpuQ==}
@@ -9031,6 +9037,8 @@ snapshots:
     optionalDependencies:
       ws: 8.20.0
       zod: 3.25.76
+
+  opencc-js@1.0.5: {}
 
   ora@5.4.1:
     dependencies:

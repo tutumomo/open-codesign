@@ -11,6 +11,7 @@ import { type Locale, availableLocales, normalizeLocale } from '@open-codesign/i
 import { enDemos } from './locales/en';
 import { ptBRDemos } from './locales/pt-BR';
 import { zhCNDemos } from './locales/zh-CN';
+import { zhTWDemos } from './locales/zh-TW';
 
 export { SYSTEM_PROMPTS, type SystemPromptId } from './system/index';
 export {
@@ -33,6 +34,7 @@ export interface DemoTemplate {
 const REGISTRY: Record<Locale, DemoTemplate[]> = {
   en: enDemos,
   'zh-CN': zhCNDemos,
+  'zh-TW': zhTWDemos,
   'pt-BR': ptBRDemos,
 };
 

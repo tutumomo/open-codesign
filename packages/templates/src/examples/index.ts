@@ -15,6 +15,7 @@ import { type Locale, availableLocales, normalizeLocale } from '@open-codesign/i
 import { enExamples } from './locales/en';
 import { ptBRExamples } from './locales/pt-BR';
 import { zhCNExamples } from './locales/zh-CN';
+import { zhTWExamples } from './locales/zh-TW';
 import {
   thumbAiHero,
   thumbAuth,
@@ -216,6 +217,7 @@ export const EXAMPLES: Example[] = [
 const REGISTRY: Record<Locale, Record<string, ExampleContent>> = {
   en: enExamples,
   'zh-CN': zhCNExamples,
+  'zh-TW': zhTWExamples,
   'pt-BR': ptBRExamples,
 };
 

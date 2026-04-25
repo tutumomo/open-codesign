@@ -2154,6 +2154,7 @@ function AppearanceTab() {
             options={[
               { value: 'en', label: t('settings.appearance.langEn') },
               { value: 'zh-CN', label: t('settings.appearance.langZhCN') },
+              { value: 'zh-TW', label: t('settings.appearance.langZhTW') },
               { value: 'pt-BR', label: t('settings.appearance.langPtBR') },
             ]}
           />
